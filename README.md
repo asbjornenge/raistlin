@@ -2,12 +2,12 @@
 
 Rastlin is a dev- & buildtool for [browserify](http://browserify.org/).
 
-Rastlin is named after the wizard [Rastlin Majere](https://en.wikipedia.org/wiki/Raistlin_Majere) from the [Dragonlance](https://en.wikipedia.org/wiki/Dragonlance) series.
+Rastlin is named after the wizard [Rastlin Majere](https://en.wikipedia.org/wiki/Raistlin_Majere) from the [Dragonlance](https://en.wikipedia.org/wiki/Dragonlance) universe.
 
 ## Install
 
 ```sh
-npm install --save-dev rastlin
+npm install --save-dev @asbjornenge/rastlin
 ```
 
 ## Use
