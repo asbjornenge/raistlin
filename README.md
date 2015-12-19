@@ -1,34 +1,34 @@
-# Rastlin
+# Raistlin
 
-Rastlin is a dev- & buildtool for [browserify](http://browserify.org/).
+Raistlin is a dev- & buildtool for [browserify](http://browserify.org/).
 
-Rastlin is named after the wizard [Rastlin Majere](https://en.wikipedia.org/wiki/Raistlin_Majere) from the [Dragonlance](https://en.wikipedia.org/wiki/Dragonlance) universe.
+Raistlin is named after the wizard [raistlin Majere](https://en.wikipedia.org/wiki/Raistlin_Majere) from the [Dragonlance](https://en.wikipedia.org/wiki/Dragonlance) universe.
 
 ## Install
 
 ```sh
-npm install --save-dev @asbjornenge/rastlin
+npm install --save-dev @asbjornenge/raistlin
 ```
 
 ## Use
 
-Use the `rastlin` cli by itself or together with [npm-run-scripts]().
+Use the `raistlin` cli by itself or together with [npm-run-scripts](https://docs.npmjs.com/cli/run-script).
 
 ```sh
-rastlin -h
-rastlin create --type app someapp
+raistlin -h
+raistlin create --type app someapp
 ```
 
 ```json
 {
   "scripts": {
-    "start": "rastlin start --hot --images --stylus",
-    "build": "rastlin build",
-    "bundle": "rastlin bundle"
+    "start": "raistlin start --hot --images --stylus",
+    "build": "raistlin build",
+    "bundle": "raistlin bundle"
   }
 }
 ```
 
-Rastlin is convention based. It is based on a 3 folder structure; `app` contains your source files, `build` is the build directory (used for development and builds) and `dist` is where bundles go to be published.
+Raistlin is convention based. It is based on a 3 folder structure; `app` contains your source files, `build` is the build directory (used for development and builds) and `dist` is where bundles go to be published.
 
 enjoy
