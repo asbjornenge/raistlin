@@ -1,0 +1,33 @@
+{
+  "name": "@asbjornenge/raistlin",
+  "version": "1.0.0",
+  "description": "A dev- and buildtool for browserify",
+  "main": "index.js",
+  "bin": {
+    "raistlin": "./lib/index.js"
+  },
+  "scripts": {
+    "build": "babel src --out-dir lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asbjornenge/raistlin.git"
+  },
+  "keywords": [
+    "browserify",
+    "buildtool",
+    "babel",
+    "hmr",
+    "cli"
+  ],
+  "author": "Asbjorn Enge <asbjorn@hanafjedle.net>",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/asbjornenge/raistlin/issues"
+  },
+  "homepage": "https://github.com/asbjornenge/raistlin#readme",
+  "dependencies": {
+    "shelljs": "^0.5.3",
+    "subcmd": "^1.0.1"
+  }
+}
