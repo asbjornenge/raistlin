@@ -4,7 +4,7 @@ Raistlin is a dev- & buildtool for [browserify](http://browserify.org/).
 
 Raistlin is named after the wizard [Raistlin Majere](https://en.wikipedia.org/wiki/Raistlin_Majere) from the [Dragonlance](https://en.wikipedia.org/wiki/Dragonlance) universe.
 
-![raistlin-image]()
+![raistlin-image](https://raw.githubusercontent.com/asbjornenge/raistlin/master/raistlin.jpg)
 
 ## Install
 
