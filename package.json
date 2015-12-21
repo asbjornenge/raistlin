@@ -1,6 +1,6 @@
 {
   "name": "@asbjornenge/raistlin",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A dev- and buildtool for browserify",
   "main": "index.js",
   "bin": {
