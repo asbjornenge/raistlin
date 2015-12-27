@@ -27,12 +27,10 @@ module.exports = {
         },
         {
             name : 'port',
-            abbr : 'p',
             help : 'port to bind (default 8080)'
         },
         {
             name : 'host',
-            abbr : 'h',
             help : 'host to bind (default 127.0.0.1)'
         }
     ],
@@ -47,8 +45,8 @@ function start(args, cliopts) {
     let img     = args.images  ? '-t imgurify'                     : '' 
     let watch   = `watchify --poll=100 -v -d ${input} -t babelify ${styl} ${img} ${hot} ${output}`
 
-    let host    = args.h      || '127.0.0.1'
-    let port    = args.p      || '8080'
+    let host    = args.host   || '127.0.0.1'
+    let port    = args.port   || '8080'
     let folder  = args.static || 'build'
     let _static = `static -a ${host} -p ${port} ${folder}`
 

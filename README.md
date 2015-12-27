@@ -33,4 +33,18 @@ raistlin create --type app someapp
 
 Raistlin is convention based. It is based on a 3 folder structure; `app` contains your source files, `build` is the build directory (used for development and builds) and `dist` is where bundles go to be published.
 
+## Changelog
+
+### 1.1.1
+
+* `start` is no longer using -h and -p as abbr for host and port since --help was eating -h
+
+### 1.1.0
+
+* Don't remember. Had no changelog.
+
+### 1.0.0
+
+* Initial release
+
 enjoy
