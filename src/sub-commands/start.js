@@ -1,3 +1,4 @@
+let path  = require('path')
 let shell = require('shelljs')
 let utils = require('../utils')
 
@@ -16,6 +17,11 @@ module.exports = {
         {
             name : 'images',
             help : 'include the imgurify transform env'
+        },
+        {
+            name : 'tales',
+            help : 'run with tales',
+            boolean: true
         },
         {
             name : 'out',
@@ -43,14 +49,20 @@ function start(args, cliopts) {
     let hot     = args.hot     ? '-p browserify-hmr'               : ''
     let styl    = args.stylus  ? '-t stylusify'                    : '' 
     let img     = args.images  ? '-t imgurify'                     : '' 
+    if (args.tales) {
+      input = path.resolve(__dirname, '../tales/app.js')
+      output = '-o '+path.resolve(__dirname, '../tales/build.js')
+    }
     let watch   = `watchify --poll=100 -v -d ${input} -t babelify ${styl} ${img} ${hot} ${output}`
 
     let host    = args.host   || '127.0.0.1'
     let port    = args.port   || '8080'
     let folder  = args.static || 'build'
+    if (args.tales)
+      folder = path.resolve(__dirname, '../tales')
     let _static = `static -a ${host} -p ${port} ${folder}`
 
     console.log(watch, _static)
 
-    shell.exec(`concurrent -k -p command '${watch}' '${_static}'`)
+    shell.exec(`concurrently -k -p command '${watch}' '${_static}'`)
 }
