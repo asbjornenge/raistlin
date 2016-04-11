@@ -1,1 +1,0 @@
-/srv/asbjornenge/raistlin/tales/index.js

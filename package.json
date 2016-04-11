@@ -7,7 +7,9 @@
     "raistlin": "./lib/cli.js"
   },
   "scripts": {
-    "build": "babel src --out-dir lib",
+    "build": "npm run build-src && npm run build-tales-app",
+    "build-src": "babel src --out-dir lib",
+    "build-tales-app": "cp -R tales-app lib/tales-app",
     "test": "babel-node --version",
     "tales": "babel-node src/cli.js start --hot --tales tales/index.js"
   },
