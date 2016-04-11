@@ -1,5 +1,8 @@
-let shell = require('shelljs')
-let utils = require('../../utils')
+let fs     = require('fs')
+let path   = require('path')
+let assign = require('object.assign')
+let execSh = require('exec-sh')
+let utils  = require('../../utils')
 
 module.exports = {
     name : 'init',
@@ -10,5 +13,10 @@ module.exports = {
 }
 
 function init(args, cliopts) {
-  shell.exec('npm init')
+  execSh('npm init .', (err) => {
+    let writtenConfig = require(path.resolve('./package.json'))
+    let raistlingConfig = require(path.resolve(__dirname, '../../../src/sub-commands/init/raistlin-package.json'))
+    let mergedConfig = assign({}, writtenConfig, raistlingConfig)
+    fs.writeFileSync('./package.json', JSON.stringify(mergedConfig, null, 2))
+  })
 }
