@@ -21,6 +21,7 @@ function init(args, cliopts) {
     let mergedConfig = assign({}, writtenConfig, raistlingConfig)
     fs.writeFileSync('./package.json', JSON.stringify(mergedConfig, null, 2))
     shell.exec(`cp ${initPath+'/app.js'} app.js`) 
+    shell.exec(`cp ${initPath+'/dom.js'} dom.js`) 
     shell.exec(`cp ${initPath+'/tales.js'} tales.js`) 
   })
 }

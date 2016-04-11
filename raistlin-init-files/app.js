@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 
 export default class App extends React.Component {
   render() {
@@ -10,8 +9,3 @@ export default class App extends React.Component {
     )
   }
 }
-
-let container = document.createElement('div')
-document.body.appendChild(container)
-
-ReactDOM.render(<App />, container)
