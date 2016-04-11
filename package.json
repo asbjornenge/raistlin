@@ -7,9 +7,7 @@
     "raistlin": "./lib/cli.js"
   },
   "scripts": {
-    "build": "npm run build-src && npm run build-tales-app",
-    "build-src": "babel src --out-dir lib",
-    "build-tales-app": "cp -R tales-app lib/tales-app",
+    "build": "BABEL_ENV=raistlin-build babel src --out-dir lib",
     "test": "babel-node --version",
     "tales": "babel-node src/cli.js start --hot --tales tales/index.js"
   },
@@ -35,8 +33,19 @@
     "subcmd": "^1.0.1"
   },
   "babel": {
-    "presets": [
-      "es2015"
+    "env": {
+      "raistlin-build": {
+        "presets": [
+          "es2015"
+        ]
+      }
+    }
+  },
+  "browserify": {
+    "transform": [
+      "babelify",
+      "stylusify",
+      "imgurify"
     ]
   },
   "devDependencies": {

@@ -52,8 +52,8 @@ function start(args, cliopts) {
     if (args.tales) {
       var talesPath = path.resolve(input)
       console.log('talesPath', talesPath)
-      input = path.resolve(__dirname, '../tales/app.js')
-      output = '-o '+path.resolve(__dirname, '../tales/build.js')
+      input = path.resolve(__dirname, '../../tales-app/app.js')
+      output = '-o '+path.resolve(__dirname, '../../tales-app/build.js')
     }
     let watch   = `watchify --poll=100 -v -d ${input} -t babelify ${styl} ${img} ${hot} ${output}`
 
@@ -61,7 +61,7 @@ function start(args, cliopts) {
     let port    = args.port   || '8080'
     let folder  = args.static || 'build'
     if (args.tales)
-      folder = path.resolve(__dirname, '../tales')
+      folder = path.resolve(__dirname, '../../tales-app')
     let _static = `static -a ${host} -p ${port} ${folder}`
 
     console.log(watch, _static)
