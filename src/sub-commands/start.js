@@ -50,6 +50,8 @@ function start(args, cliopts) {
     let styl    = args.stylus  ? '-t stylusify'                    : '' 
     let img     = args.images  ? '-t imgurify'                     : '' 
     if (args.tales) {
+      var talesPath = path.resolve(input)
+      console.log('talesPath', talesPath)
       input = path.resolve(__dirname, '../tales/app.js')
       output = '-o '+path.resolve(__dirname, '../tales/build.js')
     }

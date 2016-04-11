@@ -4,11 +4,12 @@
   "description": "A dev- and buildtool for browserify",
   "main": "index.js",
   "bin": {
-    "raistlin": "./lib/index.js"
+    "raistlin": "./lib/cli.js"
   },
   "scripts": {
     "build": "babel src --out-dir lib",
-    "tales": "babel-node src/index.js start --tales"
+    "test": "babel-node --version",
+    "tales": "babel-node src/cli.js start --hot --tales tales/index.js"
   },
   "repository": {
     "type": "git",
@@ -32,15 +33,58 @@
     "subcmd": "^1.0.1"
   },
   "babel": {
-    "presets": [
-      "es2015"
-    ]
+    "env": {
+      "test": {
+        "presets": [
+          "es2015"
+        ]
+      },
+      "development": {
+        "stage": 0,
+        "plugins": [
+          "react-transform"
+        ],
+        "extra": {
+          "react-transform": {
+            "transforms": [
+              {
+                "transform": "react-transform-hmr",
+                "imports": [
+                  "react"
+                ],
+                "locals": [
+                  "module"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    }
   },
   "devDependencies": {
-    "babel-preset-es2015": "^6.6.0",
-    "concurrently": "^2.0.0",
+    "babel-cli": "6.5.1",
+    "babel-core": "6.4.5",
+    "babel-plugin-react-transform": "1.1.1",
+    "babel-preset-es2015": "6.3.13",
+    "babelify": "6.4.0",
+    "browserify": "11.2.0",
+    "browserify-hmr": "0.3.1",
+    "concurrently": "^0.1.0",
+    "cssnano": "^3.3.1",
+    "imgurify": "^1.2.0",
+    "livereloadify": "^2.0.0",
+    "minimatch": "^3.0.0",
+    "mocha": "^2.3.4",
+    "mocha-imguri-compiler": "^1.1.1",
+    "mocha-stylus-compiler": "^1.0.1",
     "react": "^15.0.0",
     "react-dom": "^15.0.0",
-    "watchify": "^3.7.0"
+    "react-transform-hmr": "1.0.1",
+    "stylus": "^0.51.1",
+    "stylusify": "^2.1.0",
+    "testdom": "^2.0.0",
+    "uglifyjs": "^2.4.10",
+    "watchify": "3.4.0"
   }
 }
