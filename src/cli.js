@@ -10,6 +10,7 @@ require('subcmd')({
     name : utils.getCliName(),
     usage : `Usage: ${utils.getCliName()} [CMD] [OPTIONS]\n
     CMD(s)
+        init   - Init a raistling app 
         start  - Start a development server
         build  - Build an app directory
         bundle - Bundle a build directory
@@ -23,9 +24,10 @@ require('subcmd')({
     ],
     command : def,
     commands : [
+        require('./sub-commands/init'),
         require('./sub-commands/start'),
         require('./sub-commands/build'),
-        require('./sub-commands/bundle'),
+        require('./sub-commands/bundle')
     ]
 },{
     autoHelp : true
