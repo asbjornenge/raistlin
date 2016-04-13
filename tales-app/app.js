@@ -1,43 +1,50 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import * as tales from './tales'
-
-console.log('root tales', tales)
+import React            from 'react'
+import ReactDOM         from 'react-dom'
+import changeCase       from 'change-case'
+import * as _tales      from './tales'
+import TaleList         from './components/TaleList'
+import css              from './style'
 
 class Tales extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      tales : []
+    constructor(props) {
+        super(props)
+        this.state = {
+            tales : [],
+            selected: null
+        }
     }
-  }
-  render() {
-    let _tales = this.state.tales.map(t => {
-      return <li key={t.name}>{t.name}</li>
-    })
-    return (
-      <div className="Tales">
-        <h1>Tales Bitches</h1>
-        <ul>{_tales}</ul>
-      </div>
-    )
-  }
-  pickTales() {
-    let _tales = []
-    for (let tale in tales) {
-      let render = tales[tale]
-      if (typeof render == 'function') {
-        _tales.push({
-          name: tale, // TODO: Normalize name
-          render: tales[tale]
-        })
-      }
+    componentDidMount() {
+        this.pickTales()
     }
-    this.setState({ tales: _tales })
-  }
-  componentDidMount() {
-    this.pickTales()
-  }
+    pickTales() {
+        let tales = []
+        for (let tale in _tales) {
+            let render = _tales[tale]
+            if (typeof render == 'function') {
+                tales.push({
+                    name: changeCase.titleCase(tale), 
+                    render: render
+                })
+            }
+        }
+        this.setState({ tales: tales })
+    }
+    render() {
+        return (
+            <div className='Tales'>
+                <style>{css}</style>
+                <div className='content'>
+                    <TaleList tales={this.state.tales} selected={this.state.selected} onSelected={(tale) => this.setState({selected: tale})} />
+                    <div className='render'>
+                        {
+                            this.state.selected && 
+                            this.state.selected.render() 
+                        }
+                    </div>
+                </div>
+            </div>
+        )
+    }
 }
 
 ReactDOM.render(<Tales />, document.querySelector('#tales')) 
