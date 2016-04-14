@@ -1,6 +1,14 @@
 # Raistlin
 
-Raistlin is a dev- & buildtool for [browserify](http://browserify.org/).
+Raistlin is a dev- & buildtool for [React](https://facebook.github.io/react/) and [browserify](http://browserify.org/).
+
+It seeks to provide a great starting point for your React apps and components. It has the following features:
+
+* development server
+* hot-reloading
+* tales (similar to [react-storybook](https://github.com/kadirahq/react-storybook))
+* building
+* bundling
 
 Raistlin is named after the wizard [Raistlin Majere](https://en.wikipedia.org/wiki/Raistlin_Majere) from the [Dragonlance](https://en.wikipedia.org/wiki/Dragonlance) universe.
 
@@ -9,29 +17,32 @@ Raistlin is named after the wizard [Raistlin Majere](https://en.wikipedia.org/wi
 ## Install
 
 ```sh
-npm install --save-dev @asbjornenge/raistlin
+npm install -g @asbjornenge/raistlin
 ```
 
 ## Use
 
-Use the `raistlin` cli by itself or together with [npm-run-scripts](https://docs.npmjs.com/cli/run-script).
+Create a new app using the `cli`.
 
 ```sh
-raistlin -h
-raistlin create --type app someapp
+raistlin init 
 ```
+
+Raistlin will populate the folder with an updated
+
+Notice how `raistlin` works together with [npm-run-scripts](https://docs.npmjs.com/cli/run-script).
+
 
 ```json
 {
   "scripts": {
-    "start": "raistlin start --hot --images --stylus",
+    "start": "raistlin start --hot --images --stylus dom.js",
+    "tales": "raistlin start --hot --tales tales.js",
     "build": "raistlin build",
     "bundle": "raistlin bundle"
   }
 }
 ```
-
-Raistlin is convention based. It is based on a 3 folder structure; `app` contains your source files, `build` is the build directory (used for development and builds) and `dist` is where bundles go to be published.
 
 ## Changelog
 
