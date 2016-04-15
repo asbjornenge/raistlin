@@ -42,7 +42,7 @@ Notice how `raistlin` works together with [npm-run-scripts](https://docs.npmjs.c
 npm start
 ```
 
-# :rocket: :horse:
+You now have :sparkles: with babelification and hot reloading up and running on [http://localhost:8080](http://localhost:8080) :rocket: :horse:
 
 **NOTE!** 
 
