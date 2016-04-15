@@ -128,7 +128,7 @@ Give it a try and give us some [feedback](https://github.com/asbjornenge/raistli
 
 ## Changelog
 
-### 2.0.1 - 2.0.2
+### 2.0.1 - 2.0.3
 
 * Minor cleanups, fixes and improvements
 
