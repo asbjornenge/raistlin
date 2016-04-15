@@ -68,7 +68,7 @@ tales/tales.js  // Authored tales go here
 .raistlin/      // Temporary build folder
 ```
 
-#### CLI Options
+**CLI Options**
 
 ```
 None for now.
@@ -80,7 +80,7 @@ None for now.
 
 Start the browserify development server. It uses [watchify](https://github.com/substack/watchify), [babelify](https://github.com/babel/babelify) and [browserify-hmr](https://github.com/AgentME/browserify-hmr) by default. 
 
-#### CLI Options
+**CLI Options**
 
 ```
 --hot              // Include the hot reloading (boolean flag)
@@ -90,7 +90,7 @@ Start the browserify development server. It uses [watchify](https://github.com/s
 --host <host>      // Host to bind (default 127.0.0.1)
 ```
 
-#### Passing additional options to browserify
+**Passing additional options to browserify**
 
 `raistlin start app.js -- -t imgurify` 
 
@@ -102,7 +102,7 @@ Options passed after `--` will be forwarded to `browserify`.
 
 Build your app using browserify without the debug flag and with appropriate `NODE_ENV` and `BABEL_ENV`.
 
-#### CLI Options
+**CLI Options**
 
 ```
 --out  // Where to output the build (required)
@@ -114,7 +114,7 @@ Build your app using browserify without the debug flag and with appropriate `NOD
 
 Bundles your app using [uglifyjs](https://github.com/mishoo/UglifyJS2).
 
-#### CLI Options
+**CLI Options**
 
 ```
 --out  // Where to output the bundle (required)
