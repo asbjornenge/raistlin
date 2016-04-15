@@ -1,6 +1,6 @@
 {
   "name": "raistlin",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A dev- and buildtool for browserify",
   "main": "index.js",
   "bin": {
