@@ -8,6 +8,9 @@
   "babel": {
     "env": {
       "development": {
+        "stage": 0
+      },
+      "hotdevelopment": {
         "stage": 0,
         "plugins": [
           "react-transform"
