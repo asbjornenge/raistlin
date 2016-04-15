@@ -1,9 +1,9 @@
 {
   "scripts": {
-    "start": "raistlin start --hot dom.js",
-    "tales": "raistlin start --hot --out tales/build.js --static tales tales/app.js",
-    "build": "raistlin build",
-    "bundle": "raistlin bundle"
+    "start": "raistlin start app/dom.js --hot",
+    "tales": "raistlin start tales/app.js --hot --out tales/build.js --static tales",
+    "build": "raistlin build app/dom.js --out .raistlin/build.js",
+    "bundle": "raistlin bundle .raistlin/build.js --out dist/app.js"
   },
   "babel": {
     "env": {

@@ -41,7 +41,7 @@ function validate(args) {
 }
 
 function start(args, cliopts) {
-    validate()
+    validate(args)
     var bargs = minimist(args._)
     delete bargs._
     args._ = args._.slice(0,1)

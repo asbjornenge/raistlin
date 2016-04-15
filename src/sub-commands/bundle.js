@@ -33,7 +33,7 @@ function validate(args) {
 }
 
 function bundle(args, cliopts) {
-    validate()
+    validate(args)
     let bundlejs   = `uglifyjs --compress --screw-ie8 ${args._[0]} -o ${args.out}`
     let bundlecss  = 'echo No css to bundle...'
 

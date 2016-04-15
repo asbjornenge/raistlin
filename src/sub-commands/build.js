@@ -1,5 +1,7 @@
-let shell = require('shelljs')
-let utils = require('../utils')
+let shell    = require('shelljs')
+let dargs    = require('dargs')
+let minimist = require('minimist')
+let utils    = require('../utils')
 
 module.exports = {
     name : 'build',
@@ -52,5 +54,5 @@ function start(args, cliopts) {
     }
     shell.env['BABEL_ENV'] = 'production'
     shell.env['NODE_ENV'] = 'production'
-    shell.exec(`concurrent -p command '${buildjs}' '${buildstyle}'`)
+    shell.exec(`concurrently -p command '${buildjs}' '${buildstyle}'`)
 }
