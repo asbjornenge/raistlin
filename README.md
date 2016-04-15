@@ -122,7 +122,9 @@ Bundles your app using [uglifyjs]().
 
 ## Tales
 
+Tales is a feature inspired by [react-storybook](https://github.com/kadirahq/react-storybook). It's a simple app that will allow you to render your app in different states easily. It is added to your app if you do `raistlin init`.
 
+Give it a try and give us some [feedback](/issues). :sparkles:
 
 ## Changelog
 
