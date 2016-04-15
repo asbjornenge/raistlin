@@ -4,11 +4,10 @@ Raistlin is a dev- & buildtool for [React](https://facebook.github.io/react/) an
 
 It seeks to provide a great starting point for your React apps and components. It has the following features:
 
-* development server
-* hot-reloading
-* tales (similar to [react-storybook](https://github.com/kadirahq/react-storybook))
-* building
-* bundling
+* development server :rocket:
+* hot-reloading :fire: :recycle:
+* tales :sparkles: (similar to [react-storybook](https://github.com/kadirahq/react-storybook))
+* building & bundling :package:
 
 Raistlin is named after the wizard [Raistlin Majere](https://en.wikipedia.org/wiki/Raistlin_Majere) from the [Dragonlance](https://en.wikipedia.org/wiki/Dragonlance) universe.
 
