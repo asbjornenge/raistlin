@@ -48,6 +48,7 @@
     "concurrently": "2.0.0",
     "react-transform-hmr": "1.0.1",
     "uglifyjs": "2.4.10",
-    "watchify": "3.4.0"
+    "watchify": "3.4.0",
+    "raistlin": "^2.0.0"
   }
 }
