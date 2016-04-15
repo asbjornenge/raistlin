@@ -23,7 +23,7 @@ function init(args, cliopts) {
     shell.exec(`mkdir app && mkdir .raistlin && mkdir dist`)
     shell.exec(`cp ${initPath+'/app.js'} app/app.js`) 
     shell.exec(`cp ${initPath+'/dom.js'} app/dom.js`) 
-    shell.exec(`cp ${initPath+'/.gitignore'} .gitignore`) 
+    shell.exec(`cp ${initPath+'/gitignore'} .gitignore`) 
     shell.exec(`cp -R ${initPath+'/../tales-app'} tales`) 
   })
 }
