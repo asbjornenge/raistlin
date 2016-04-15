@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "raistlin start --hot dom.js",
-    "tales": "raistlin start --hot tales/app.js",
+    "tales": "raistlin start --hot --out tales/build.js --static tales tales/app.js",
     "build": "raistlin build",
     "bundle": "raistlin bundle"
   },
