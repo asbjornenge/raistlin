@@ -1,13 +1,17 @@
 {
   "scripts": {
-    "start": "raistlin start --hot --images --stylus dom.js",
-    "tales": "raistlin start --hot --images --stylus --tales tales.js",
-    "build": "raistlin --hot build",
-    "bundle": "raistlin bundle"
+    "start": "raistlin start app/dom.js --hot",
+    "tales": "raistlin start tales/app.js --hot --out tales/build.js --static tales",
+    "build": "npm run build-js && npm run bundle-js",
+    "build-js": "raistlin build app/dom.js --out .raistlin/build.js",
+    "bundle-js": "raistlin bundle .raistlin/build.js --out dist/app.js"
   },
   "babel": {
     "env": {
       "development": {
+        "stage": 0
+      },
+      "hotdevelopment": {
         "stage": 0,
         "plugins": [
           "react-transform"
@@ -43,11 +47,8 @@
     "browserify-hmr": "0.3.1",
     "concurrently": "2.0.0",
     "cssnano": "3.3.1",
-    "imgurify": "1.2.0",
     "livereloadify": "2.0.0",
     "react-transform-hmr": "1.0.1",
-    "stylus": "0.51.1",
-    "stylusify": "2.1.0",
     "uglifyjs": "2.4.10",
     "watchify": "3.4.0"
   }
