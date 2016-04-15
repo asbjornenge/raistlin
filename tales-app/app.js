@@ -1,7 +1,7 @@
 import React            from 'react'
 import ReactDOM         from 'react-dom'
 import changeCase       from 'change-case'
-import * as _tales      from './tales'
+import * as _tales      from './../tales'
 import TaleList         from './components/TaleList'
 import css              from './style'
 
