@@ -83,11 +83,11 @@ Start the browserify development server. It uses [watchify](), [babelify]() and 
 #### CLI Options
 
 ```
---hot             // Include the hot reloading (boolean flag)
---out <output>    // Where to output the build (defaults to magic place)
---static <folder> // Folder for the static files (defaults to magic place)
---port <port>     // Port to bind (default 8080)
---host <host>     // Host to bind (default 127.0.0.1)
+--hot              // Include the hot reloading (boolean flag)
+--out <output>     // Where to output the build (defaults to magic place)
+--static <folder>  // Folder for the static files (defaults to magic place)
+--port <port>      // Port to bind (default 8080)
+--host <host>      // Host to bind (default 127.0.0.1)
 ```
 
 #### Passing additional options to browserify
@@ -105,7 +105,7 @@ Build your app using browserify without the debug flag and with appropriate `NOD
 #### CLI Options
 
 ```
---out             // Where to output the build (required)
+--out  // Where to output the build (required)
 ```
 
 ### bundle
@@ -117,7 +117,7 @@ Bundles your app using [uglifyjs]().
 #### CLI Options
 
 ```
---out             // Where to output the bundle (required)
+--out  // Where to output the bundle (required)
 ```
 
 ## Tales
