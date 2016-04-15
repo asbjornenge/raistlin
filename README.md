@@ -66,7 +66,7 @@ tales/tales.js  // Authored tales go here
 .raistlin/      // Temporary build folder
 ```
 
-#### CLI Options
+##### CLI Options
 
 ```
 None for now. Might make the --tales optional l8r.
@@ -76,7 +76,7 @@ None for now. Might make the --tales optional l8r.
 
 Start the browserify development server. It uses [watchify](), [babelify]() and [browserify-hmr]() by default. 
 
-#### CLI Options
+##### CLI Options
 
 ```
 --hot             // Include the hot reloading (boolean flag)
@@ -86,11 +86,11 @@ Start the browserify development server. It uses [watchify](), [babelify]() and 
 --host <host>     // Host to bind (default 127.0.0.1)
 ```
 
-**Passing additional options to browserify**
-
-Options passed after `--` will be forwarded to `browserify`.
+##### Passing additional options to browserify
 
 `raistlin start app.js -- -t imgurify` 
+
+Options passed after `--` will be forwarded to `browserify`.
 
 ### `build`
 
