@@ -16,18 +16,16 @@ Raistlin is named after the wizard [Raistlin Majere](https://en.wikipedia.org/wi
 ## Install
 
 ```sh
-npm install -g @asbjornenge/raistlin
+npm install -g raistlin
 ```
 
 ## Use
 
-Create a new app using the `cli`.
+Create a new app using the `init` cmd.
 
 ```sh
 raistlin init 
 ```
-
-Raistlin will populate the folder with a basic app layout. 
 
 Notice how `raistlin` works together with [npm-run-scripts](https://docs.npmjs.com/cli/run-script).
 
@@ -35,12 +33,32 @@ Notice how `raistlin` works together with [npm-run-scripts](https://docs.npmjs.c
 ```json
 {
   "scripts": {
-    "start": "raistlin start --hot app.js",
-    "build": "raistlin build app.js --out build.js",
-    "bundle": "raistlin bundle build.js --out dist.js"
+    "start": "raistlin start --hot app.js"
   }
 }
 ```
+
+```sh
+npm start
+```
+
+:rocket: :horse:
+
+**NOTE!** You don't have to use `raistlin init` to use `raistlin` but it's highly recommended. It will include some required config in `package.json` etc.
+
+## CMDs
+
+### `init`
+
+### `start`
+
+### `build`
+
+### `bundle`
+
+## Tales
+
+
 
 ## Changelog
 
