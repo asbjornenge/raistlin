@@ -21,20 +21,32 @@ module.exports = {
     command : bundle 
 }
 
-function bundle(args, cliopts) {
-    let input   = args._[0] || 'build/app.js'
-    let output  = args.out     ? '-o '+args.out                    : '-o dist/app.js'
+function validate(args) {
+    if (!args._[0]) {
+      console.error('No entrypoint specified.')
+      process.exit(1)
+    }
+    if (!args.out) {
+      console.error('No --out location specified.')
+      process.exit(1)
+    }
+}
 
-    let bundlejs   = `uglifyjs --compress --screw-ie8 ${input} ${output}`
+function bundle(args, cliopts) {
+    validate()
+    let bundlejs   = `uglifyjs --compress --screw-ie8 ${args._[0]} -o ${args.out}`
     let bundlecss  = 'echo No css to bundle...'
-    let bundlecopy = `cp build/index.html dist/index.html` 
 
     if (args.css) {
+        if (!args['css-out']) {
+          console.error('No --css-out location specified.')
+          process.exit(1)
+        }
         let cssout = args['css-out'] || 'dist/app.css'
         bundlecss = `cssnano ${args.css} ${cssout}`
     }
 
     shell.env['BABEL_ENV'] = 'production'
     shell.env['NODE_ENV'] = 'production'
-    shell.exec(`concurrent -p command '${bundlejs}' '${bundlecss}' '${bundlecopy}'`)
+    shell.exec(`concurrent -p command '${bundlejs}' '${bundlecss}'`)
 }
