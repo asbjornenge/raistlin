@@ -128,6 +128,10 @@ Give it a try and give us some [feedback](https://github.com/asbjornenge/raistli
 
 ## Changelog
 
+### 2.0.1
+
+* Minor fixes and improvements
+
 ### 2.0.0
 
 * Loosing up the conventions
