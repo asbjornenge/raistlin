@@ -28,7 +28,7 @@ Create a new app using the `cli`.
 raistlin init 
 ```
 
-Raistlin will populate the folder with an updated
+Raistlin will populate the folder with a basic app layout. 
 
 Notice how `raistlin` works together with [npm-run-scripts](https://docs.npmjs.com/cli/run-script).
 
@@ -36,15 +36,21 @@ Notice how `raistlin` works together with [npm-run-scripts](https://docs.npmjs.c
 ```json
 {
   "scripts": {
-    "start": "raistlin start --hot --images --stylus dom.js",
-    "tales": "raistlin start --hot --tales tales.js",
-    "build": "raistlin build",
-    "bundle": "raistlin bundle"
+    "start": "raistlin start --hot app.js",
+    "build": "raistlin build app.js --out build.js",
+    "bundle": "raistlin bundle build.js --out dist.js"
   }
 }
 ```
 
 ## Changelog
+
+### 2.0.0
+
+* Loosing up the conventions
+* Allow any browserify transform
+* Added `raistlin init` command to layout basic app
+* Support for tales (inspired by [react-storybook](https://github.com/kadirahq/react-storybook))
 
 ### 1.1.1
 
