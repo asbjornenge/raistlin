@@ -2,8 +2,9 @@
   "scripts": {
     "start": "raistlin start app/dom.js --hot",
     "tales": "raistlin start tales/app.js --hot --out tales/build.js --static tales",
-    "build": "raistlin build app/dom.js --out .raistlin/build.js",
-    "bundle": "raistlin bundle .raistlin/build.js --out dist/app.js"
+    "build": "npm run build-js && npm run bundle-js",
+    "build-js": "raistlin build app/dom.js --out .raistlin/build.js",
+    "bundle-js": "raistlin bundle .raistlin/build.js --out dist/app.js"
   },
   "babel": {
     "env": {
