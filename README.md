@@ -33,7 +33,7 @@ Notice how `raistlin` works together with [npm-run-scripts](https://docs.npmjs.c
 ```json
 {
   "scripts": {
-    "start": "raistlin start --hot app/dom.js"
+    "start": "raistlin start app/dom.js --hot"
   }
 }
 ```
@@ -52,11 +52,51 @@ You don't have to use `raistlin init` to use `raistlin` but it's highly recommen
 
 ### `init`
 
+`raistlin init .`
+
+Initialize a basic app layout in the taste of Raistlin Majere. Feel free to use it as a starting point and move things around to feed your own monkey.
+
+```
+package.json    // Created package.json with a few extras
+.gitignore      // .gitignore with a few good defaults
+dist/           // Builds ready for distribution go here 
+app/            // Your app <3
+app/dom.js      // ReactDOM.render(<App />)
+app/app.js      // App entrypoint
+tales/          // Tales app (see below)
+tales/tales.js  // Authored tales go here
+.raistlin/      // Temporary build folder
+```
+
+#### CLI Options
+
+```
+None for now. Might make the --tales optional l8r.
+```
+
 ### `start`
+
+`raistlin start <entrypoint> <options>`
+
+Start the browserify development server. It uses [watchify](), [babelify]() and [browserify-hmr]() by default. You can pass additional options to browserify.
+
+#### CLI Options
+
+```
+--hot             // Include the hot reloading (boolean flag)
+--out <target>    // Where to output the build (defaults to magic place)
+--static <folder> // Folder for the static files (defaults to magic place)
+--port <port>     // Port to bind (default 8080)
+--host <host>     // Host to bind (default 127.0.0.1)
+```
 
 ### `build`
 
+`build` builds your app using browserify without the debug flag and with appropriate `NODE_ENV` and `BABEL_ENV.
+
 ### `bundle`
+
+`bundle` bundles your app using [uglifyjs]().
 
 ## Tales
 
