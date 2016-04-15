@@ -50,7 +50,7 @@ You don't have to use `raistlin init` to use `raistlin` but it's highly recommen
 
 ## CMDs
 
-### init
+### **init**
 
 `raistlin init .`
 
@@ -74,7 +74,7 @@ tales/tales.js  // Authored tales go here
 None for now.
 ```
 
-### start
+### **start**
 
 `raistlin start <entrypoint> <options>`
 
