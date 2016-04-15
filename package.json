@@ -1,5 +1,5 @@
 {
-  "name": "@asbjornenge/raistlin",
+  "name": "raistlin",
   "version": "2.0.0",
   "description": "A dev- and buildtool for browserify",
   "main": "index.js",
