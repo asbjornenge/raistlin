@@ -33,7 +33,7 @@ Notice how `raistlin` works together with [npm-run-scripts](https://docs.npmjs.c
 ```json
 {
   "scripts": {
-    "start": "raistlin start --hot app.js"
+    "start": "raistlin start --hot app/dom.js"
   }
 }
 ```
@@ -42,9 +42,11 @@ Notice how `raistlin` works together with [npm-run-scripts](https://docs.npmjs.c
 npm start
 ```
 
-:rocket: :horse:
+# :rocket: :horse:
 
-**NOTE!** You don't have to use `raistlin init` to use `raistlin` but it's highly recommended. It will include some required config in `package.json` etc.
+**NOTE!** 
+
+You don't have to use `raistlin init` to use `raistlin` but it's highly recommended. It will include some required config in `package.json` etc.
 
 ## CMDs
 
