@@ -69,7 +69,7 @@ tales/tales.js  // Authored tales go here
 #### CLI Options
 
 ```
-None for now. Might make the --tales optional l8r.
+None for now.
 ```
 
 ### `raistlin start <entrypoint> <options>`
