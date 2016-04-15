@@ -15,11 +15,11 @@ module.exports = {
         },
         {
             name : 'out',
-            help : 'output file (default build/app.js)'
+            help : 'output file'
         },
         {
             name : 'static',
-            help : 'folder with static files (default build)'
+            help : 'folder with static files'
         },
         {
             name : 'port',

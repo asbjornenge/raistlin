@@ -66,7 +66,7 @@ tales/tales.js  // Authored tales go here
 .raistlin/      // Temporary build folder
 ```
 
-##### CLI Options
+#### CLI Options
 
 ```
 None for now. Might make the --tales optional l8r.
@@ -76,29 +76,41 @@ None for now. Might make the --tales optional l8r.
 
 Start the browserify development server. It uses [watchify](), [babelify]() and [browserify-hmr]() by default. 
 
-##### CLI Options
+#### CLI Options
 
 ```
 --hot             // Include the hot reloading (boolean flag)
---out <target>    // Where to output the build (defaults to magic place)
+--out <output>    // Where to output the build (defaults to magic place)
 --static <folder> // Folder for the static files (defaults to magic place)
 --port <port>     // Port to bind (default 8080)
 --host <host>     // Host to bind (default 127.0.0.1)
 ```
 
-##### Passing additional options to browserify
+#### Passing additional options to browserify
 
 `raistlin start app.js -- -t imgurify` 
 
 Options passed after `--` will be forwarded to `browserify`.
 
-### `build`
+### `raistlin build <entrypoint> --out <output>`
 
-`build` builds your app using browserify without the debug flag and with appropriate `NODE_ENV` and `BABEL_ENV.
+Build your app using browserify without the debug flag and with appropriate `NODE_ENV` and `BABEL_ENV`.
 
-### `bundle`
+#### CLI Options
 
-`bundle` bundles your app using [uglifyjs]().
+```
+--out             // Where to output the build (required)
+```
+
+### `raistlin bundle <build> --out <output>`
+
+Bundles your app using [uglifyjs]().
+
+#### CLI Options
+
+```
+--out             // Where to output the bundle (required)
+```
 
 ## Tales
 
