@@ -10,17 +10,9 @@ module.exports = {
         {
             name : 'out',
             help : 'output file (default build/app.js)'
-        },
-        {
-            name : 'appstyle',
-            help : 'build app stylesheet'
-        },
-        {
-            name : 'appstyle-out',
-            help : 'build app stylesheet to this directory'
         }
     ],
-    command : start 
+    command : build 
 }
 
 function validate(args) {
@@ -34,7 +26,7 @@ function validate(args) {
     }   
 }
 
-function start(args, cliopts) {
+function build(args, cliopts) {
     validate(args)
     var bargs = minimist(args._)
     delete bargs._
@@ -43,16 +35,7 @@ function start(args, cliopts) {
     let output  = '-o '+args.out
     let bopts   = dargs(bargs).join(' ') // Browserify options
     let buildjs = `browserify ${input} -t babelify ${bopts} ${output}`
-    let buildstyle = 'echo No app stylesheet to build...'
-    if (args.appstyle) {
-        if (!args['appstyle-out']) {
-          console.error('No --appstyle-out location specified.')
-          process.exit(1)
-        }
-        let buildstyleout = args['appstyle-out']
-        buildstyle = `stylus ${args.appstyle} -o ${buildstyleout}`
-    }
     shell.env['BABEL_ENV'] = 'production'
     shell.env['NODE_ENV'] = 'production'
-    shell.exec(`concurrently -p command '${buildjs}' '${buildstyle}'`)
+    shell.exec(`concurrently -p command '${buildjs}'`)
 }
