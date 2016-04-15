@@ -50,11 +50,9 @@ You don't have to use `raistlin init` to use `raistlin` but it's highly recommen
 
 ## CMDs
 
-### `init`
+### `raistlin init .`
 
-`raistlin init .`
-
-Initialize a basic app layout in the taste of Raistlin Majere. Feel free to use it as a starting point and move things around to feed your own monkey.
+Initialize a basic app layout in the taste of Raistlin Majere. Feel free to use it as a starting point and move things around to feed your own :monkey:.
 
 ```
 package.json    // Created package.json with a few extras
@@ -74,11 +72,9 @@ tales/tales.js  // Authored tales go here
 None for now. Might make the --tales optional l8r.
 ```
 
-### `start`
+### `raistlin start <entrypoint> <options>`
 
-`raistlin start <entrypoint> <options>`
-
-Start the browserify development server. It uses [watchify](), [babelify]() and [browserify-hmr]() by default. You can pass additional options to browserify.
+Start the browserify development server. It uses [watchify](), [babelify]() and [browserify-hmr]() by default. 
 
 #### CLI Options
 
@@ -89,6 +85,12 @@ Start the browserify development server. It uses [watchify](), [babelify]() and 
 --port <port>     // Port to bind (default 8080)
 --host <host>     // Host to bind (default 127.0.0.1)
 ```
+
+**Passing additional options to browserify**
+
+Options passed after `--` will be forwarded to `browserify`.
+
+`raistlin start app.js -- -t imgurify` 
 
 ### `build`
 
