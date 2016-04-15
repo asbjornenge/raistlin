@@ -1,8 +1,8 @@
 {
   "scripts": {
-    "start": "raistlin start --hot --images --stylus dom.js",
-    "tales": "raistlin start --hot --images --stylus --tales tales.js",
-    "build": "raistlin --hot build",
+    "start": "raistlin start --hot dom.js",
+    "tales": "raistlin start --hot tales/app.js",
+    "build": "raistlin build",
     "bundle": "raistlin bundle"
   },
   "babel": {
@@ -43,11 +43,8 @@
     "browserify-hmr": "0.3.1",
     "concurrently": "2.0.0",
     "cssnano": "3.3.1",
-    "imgurify": "1.2.0",
     "livereloadify": "2.0.0",
     "react-transform-hmr": "1.0.1",
-    "stylus": "0.51.1",
-    "stylusify": "2.1.0",
     "uglifyjs": "2.4.10",
     "watchify": "3.4.0"
   }
