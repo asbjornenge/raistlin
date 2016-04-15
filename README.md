@@ -50,7 +50,9 @@ You don't have to use `raistlin init` to use `raistlin` but it's highly recommen
 
 ## CMDs
 
-### `raistlin init .`
+### init
+
+`raistlin init .`
 
 Initialize a basic app layout in the taste of Raistlin Majere. Feel free to use it as a starting point and move things around to feed your own :monkey:.
 
@@ -72,7 +74,9 @@ tales/tales.js  // Authored tales go here
 None for now.
 ```
 
-### `raistlin start <entrypoint> <options>`
+### start
+
+`raistlin start <entrypoint> <options>`
 
 Start the browserify development server. It uses [watchify](), [babelify]() and [browserify-hmr]() by default. 
 
