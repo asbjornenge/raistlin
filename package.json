@@ -9,7 +9,8 @@
   "scripts": {
     "build": "BABEL_ENV=raistlin-build babel src --out-dir lib",
     "test": "babel-node --version",
-    "tales": "babel-node src/cli.js start --hot --tales tales/index.js"
+    "tales": "babel-node src/cli.js start --hot --tales tales/index.js",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
