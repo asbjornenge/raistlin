@@ -33,15 +33,19 @@ module.exports = {
     command : start 
 }
 
+function validate(args) {
+    if (!args._[0]) {
+      console.error('No entrypoint specified.')
+      process.exit(1)
+    }
+}
+
 function start(args, cliopts) {
+    validate()
     var bargs = minimist(args._)
     delete bargs._
     args._ = args._.slice(0,1)
     let input   = args._[0]
-    if (!input) {
-      console.error('No entrypoint specified.')
-      process.exit(1)
-    }
     let output  = args.out     ? '-o '+args.out                    : '-o '+path.resolve(__dirname, '../../basic-app/build.js')
     let hot     = args.hot     ? '-p browserify-hmr'               : ''
     let bopts   = dargs(bargs).join(' ') // Browserify options 
