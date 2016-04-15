@@ -1,6 +1,8 @@
-let path  = require('path')
-let shell = require('shelljs')
-let utils = require('../utils')
+let path     = require('path')
+let dargs    = require('dargs')
+let shell    = require('shelljs')
+let minimist = require('minimist')
+let utils    = require('../utils')
 
 module.exports = {
     name : 'start',
@@ -9,16 +11,6 @@ module.exports = {
         {
             name : 'hot',
             help : 'hot module reloading',
-            boolean: true
-        },
-        {
-            name : 'stylus',
-            help : 'include the stylusify transform env',
-            boolean: true
-        },
-        {
-            name : 'images',
-            help : 'include the imgurify transform env',
             boolean: true
         },
         {
@@ -47,6 +39,9 @@ module.exports = {
 }
 
 function start(args, cliopts) {
+    var bargs = minimist(args._)
+    delete bargs._
+    args._ = args._.slice(0,1)
     let input   = args._[0]
     if (!input) {
       console.error('No entrypoint specified.')
@@ -54,14 +49,14 @@ function start(args, cliopts) {
     }
     let output  = args.out     ? '-o '+args.out                    : '-o '+path.resolve(__dirname, '../../basic-app/build.js')
     let hot     = args.hot     ? '-p browserify-hmr'               : ''
-    let styl    = args.stylus  ? '-t stylusify'                    : '' 
-    let img     = args.images  ? '-t imgurify'                     : '' 
     if (args.tales) {
       shell.exec(`ln -sf ${path.resolve(input)} ${path.resolve(__dirname, '../../tales-app/tales.js')}`)
       input = path.resolve(__dirname, '../../tales-app/app.js')
       output = '-o '+path.resolve(__dirname, '../../tales-app/build.js')
     }
-    let watch   = `watchify --poll=100 -v -d ${input} -t babelify ${styl} ${img} ${hot} ${output}`
+    let bopts   = dargs(bargs).join(' ') // Browserify options 
+    console.log(bopts)
+    let watch   = `watchify --poll=100 -v -d ${input} ${bopts} -t babelify ${hot} ${output}`
 
     let host    = args.host   || '127.0.0.1'
     let port    = args.port   || '8080'
