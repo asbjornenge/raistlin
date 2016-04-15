@@ -78,7 +78,7 @@ None for now.
 
 `raistlin start <entrypoint> <options>`
 
-Start the browserify development server. It uses [watchify](), [babelify]() and [browserify-hmr]() by default. 
+Start the browserify development server. It uses [watchify](https://github.com/substack/watchify), [babelify](https://github.com/babel/babelify) and [browserify-hmr](https://github.com/AgentME/browserify-hmr) by default. 
 
 #### CLI Options
 
@@ -112,7 +112,7 @@ Build your app using browserify without the debug flag and with appropriate `NOD
 
 `raistlin bundle <build> --out <output>`
 
-Bundles your app using [uglifyjs]().
+Bundles your app using [uglifyjs](https://github.com/mishoo/UglifyJS2).
 
 #### CLI Options
 
