@@ -44,20 +44,12 @@ function start(args, cliopts) {
     }
     let output  = args.out     ? '-o '+args.out                    : '-o '+path.resolve(__dirname, '../../basic-app/build.js')
     let hot     = args.hot     ? '-p browserify-hmr'               : ''
-//    if (args.tales) {
-//      shell.exec(`ln -sf ${path.resolve(input)} ${path.resolve(__dirname, '../../tales-app/tales.js')}`)
-//      input = path.resolve(__dirname, '../../tales-app/app.js')
-//      output = '-o '+path.resolve(__dirname, '../../tales-app/build.js')
-//    }
     let bopts   = dargs(bargs).join(' ') // Browserify options 
-    console.log(bopts)
     let watch   = `watchify --poll=100 -v -d ${input} ${bopts} -t babelify ${hot} ${output}`
 
     let host    = args.host   || '127.0.0.1'
     let port    = args.port   || '8080'
     let folder  = args.static || path.resolve(__dirname, '../../basic-app')
-//    if (args.tales)
-//      folder = path.resolve(__dirname, '../../tales-app')
     let _static = `static -a ${host} -p ${port} ${folder}`
 
     console.log(watch, _static)
